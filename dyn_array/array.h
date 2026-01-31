@@ -69,6 +69,15 @@ int pop_back(Array *a) {
 }
 
 
+int comp(const void *a, const void *b) {
+    return (*(int *)a - *(int *)b);
+}
+
+void sort(Array *a) {
+  qsort(a->array, a->count, sizeof(int), comp);  
+}
+
+
 void freeArray(Array *a) {
   free(a->array);
   a->array = NULL;

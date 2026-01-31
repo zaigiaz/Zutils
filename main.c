@@ -5,19 +5,20 @@ int main(void) {
 
   Array items;
 
-  reserve(&items, 20);
+  /* reserve(&items, 20); */
 
   init(&items);
+  /* printf("%zu", items.capacity); */
   
-  printf("%zu", items.capacity);
-  
-  /* for(int i=0; i<50; i++) */
-  /*   add(&items, i); */
+  for(int i=0; i<50; i++)
+    add(&items, i);
 
-  /* int new_elem = 66666; */
-  /* insert(&items, new_elem, 20); */
+  int new_elem = 66666;
+  insert(&items, new_elem, 20);
+
+  sort(&items);
   
-  /* arr_print(&items); */
+  arr_print(&items);
 
   freeArray(&items);
 }
