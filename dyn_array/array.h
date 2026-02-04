@@ -63,18 +63,23 @@ void delete(Array *a, size_t index) {
 
 
 int pop_back(Array *a) {  
-  int result = a->array[a->count];
+  assert(a->count > 0);
   a->count -= 1;
+  int result = a->array[a->count];
   return result;
 }
 
 
-int comp(const void *a, const void *b) {
+int comp_asc(const void *a, const void *b) {
     return (*(int *)a - *(int *)b);
 }
 
+int comp_desc(const void *a, const void *b) {
+    return (*(int *)a + *(int *)b);
+}
+
 void sort(Array *a) {
-  qsort(a->array, a->count, sizeof(int), comp);  
+  qsort(a->array, a->count, sizeof(int), comp_asc);  
 }
 
 
