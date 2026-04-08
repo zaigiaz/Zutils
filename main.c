@@ -6,8 +6,8 @@ int main(void) {
 
   // create the dyn_array and hash_table data structures
   Array items;
-  ht Table;
 
+  ht Table;
 
   // init and insert value into hash_table
   int x = 5;
@@ -35,8 +35,10 @@ int main(void) {
   arr_print(&items);
 
   // pop the last item from end of array
-  int item = pop_back(&items);
+  /* int item = pop_back(&items); */
+  /* printf("%d", item); */
 
   // free the memory from the array
   freeArray(&items);
 }
+

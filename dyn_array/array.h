@@ -48,19 +48,19 @@ void insert(Array *a, int element, size_t index) {
   a->array[index] = element;
 }
 
+
 void delete(Array *a, size_t index) {
 
   assert(index <= a->count);
  
   // shift the rest to the left from index
-  for(index; index < a->count-1; index++) {
+  for(index; index < (a->count-1); index++) {
     a->array[index] = a->array[index+1];      
   }
   
   // delete last element in array 
   a->count -= 1;
 }
-
 
 int pop_back(Array *a) {  
   assert(a->count > 0);

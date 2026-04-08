@@ -17,11 +17,13 @@
 #define FNV_OFFSET 14695981039346656037UL
 #define FNV_PRIME  1099511628211UL
 
+// Hash Table Entry 
 typedef struct {
   char* key;
   int value;
 } ht_entry;
 
+// Hash Table
 typedef struct {
   ht_entry* entries;
   size_t capacity;
@@ -113,6 +115,7 @@ static const char* ht_set_entry(ht_entry* entries, size_t capacity, const char* 
   entries[index].value = value;
   return key;
 }
+
 
 static bool expand_ht(ht *Table) {
   size_t new_capacity = 2 * Table->capacity;
