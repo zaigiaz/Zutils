@@ -6,7 +6,7 @@
 #include <assert.h>
 
 typedef struct {
-  int *array;
+  int * array;
   size_t capacity;
   size_t count;
 } Array;
@@ -22,7 +22,7 @@ void init(Array *a) {
   a->count = 0;
 
   if(a->capacity == 0)
-    a->capacity = 256;
+    a->capacity = 512;
 
   a->array = malloc(a->capacity * sizeof(int));
 }
@@ -69,7 +69,6 @@ int pop_back(Array *a) {
   return result;
 }
 
-
 int comp_asc(const void *a, const void *b) {
     return (*(int *)a - *(int *)b);
 }
@@ -81,7 +80,6 @@ int comp_desc(const void *a, const void *b) {
 void sort(Array *a) {
   qsort(a->array, a->count, sizeof(int), comp_asc);  
 }
-
 
 void freeArray(Array *a) {
   free(a->array);
