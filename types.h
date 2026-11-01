@@ -46,7 +46,6 @@ typedef int64_t       i64;
 typedef float         f32;
 typedef double        f64;
 
-typedef size_t        usize;
 typedef ptrdiff_t     size;
 typedef unsigned char utf8;
 
@@ -54,7 +53,7 @@ typedef unsigned char utf8;
 #define s8(s) (s8){(utf8 *)s, lengthof(s)}
 typedef struct {
   utf8 * data;
-  usize len;
+  size_t len;
 } s8;
 
 #endif
