@@ -6,8 +6,14 @@ The dyn_arrays and hash_table were written months ago when I was a much worse pr
 I will add Memory Allocators and ring-buffers, queues, stacks, linked-list, etc later.
 
 # current 
-- Dynamic Arrays (type-specific)
-- Hash Tables
-- CSV Parser
 
-# planned
+- Dynamic Arrays
+- String-Buffers
+- Arenas and Memory Pools
+
+next I want to do Linked-Lists and Tree-like structures
+
+# resources
+
+- https://hackaday.com/2024/12/19/better-c-strings-simply/
+  Good discussion here about string types in C and C++

@@ -9,11 +9,11 @@ int main() {
   strbuf path;
   strbuf_init(&path);
 
-  strbuf_append(&path, "/home/");
+  strbuf_append(&path, "home/");
   printf("%s\n", path.data);
 
   strbuf_append(&path, big_str);
-  printf("\n%s and size %zu", path.data, path.len); 
+  printf("\n%s and size %zu", path.data, path.len);
 
   strbuf_pop_right(&path, sizeof("/again"));
   printf("\n%s", path.data);
@@ -23,4 +23,7 @@ int main() {
 
   strbuf_pop_dir(&path);
   printf("\n%s", path.data);
+
+  strview s = strbuf_slice(&path, 4, 9);
+  printf("\n%*s", s.len, s.data);
 }

@@ -8,11 +8,8 @@
 
 #define MAX_SIZE 256
 
-// TODO :: fix this or think about semantics of views/slicing later
-typedef struct {
-  u8 * data;
-  size_t len;
-} str_view;
+// TODO :: some type of strtok() like function that uses the strview
+// TOOD :: reverse the string-buffer with two-pointers (for-fun?)
 
 // static buffer of medium size for path or basic string manipulation tasks
 typedef struct {
@@ -20,6 +17,12 @@ typedef struct {
   size_t len;
   size_t capacity;
 } strbuf;
+
+// pointer into the string buffer with a length
+typedef struct {
+  const u8 * data;
+  size_t len;
+} strview;
 
 void strbuf_init(strbuf * buf) {
   buf->len = 0;
@@ -62,6 +65,7 @@ void strbuf_pop_right(strbuf* buf, size_t amt) {
 }
 
 // pop the last dir/file in path and go up directory
+// NOTE :: for now there is no safety with this function, will need to change in the future
 void strbuf_pop_dir(strbuf* buf) {
   if(buf->len == 0) {
     fprintf(stderr, "buffer is empty");
@@ -77,5 +81,21 @@ void strbuf_pop_dir(strbuf* buf) {
   fprintf(stderr, "\ncould not find directory delimiter, no work done");
 }
 
+// get slice of data from the buffer
+strview strbuf_slice(const strbuf *s, size_t start, size_t end) {
+
+  // invalid range
+  if (start > s->len || end > s->len - start) {
+    return (strview){ .data = NULL, .len = 0 };
+  }
+
+  return (strview){ .data = s->data + start, .len = end };
+}
+
+
+// parse the buffer by a delimiter and return
+void strbuf_parse_delim(strbuf * buf, char delim) {
+
+}
 
 #endif
