@@ -1,5 +1,7 @@
 #include <stdio.h>
 #include "strbuf.h"
+#include "csv-parser.h"
+
 
 int main() {
 

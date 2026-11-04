@@ -11,7 +11,12 @@ I will add Memory Allocators and ring-buffers, queues, stacks, linked-list, etc 
 - String-Buffers
 - Arenas and Memory Pools
 
+# Planned
+
 next I want to do Linked-Lists and Tree-like structures
+
+Then a basic .ini file format based off of strbuf
+and basic .csv or .dat handling for any projects I have in the future.
 
 # resources
 

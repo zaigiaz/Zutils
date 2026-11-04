@@ -1,11 +1,10 @@
 #ifndef STRLIB
 #define STRLIB
 
-// TODO :: make this pointer based and reduce pass-by-value copying
-// TODO :: Relook at the trim_right logic and think about how to take advantage of .data, and .len when doing shit
-// TODO :: rewrite str_append
-
-// PLAN :: Other String Functions?
+// NOTE ::
+// Older experiment from when I tried to take basic lenght-based strings
+// and make them into a general string type. This is possible but was kind of awkward.
+// I ended up just defaulting to my later strbuf design later.
 
 s8 str_append(s8 first, char * txt);
 s8 str_trim_right_dirty(s8 first, char * txt);
