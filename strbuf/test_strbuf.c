@@ -1,7 +1,6 @@
 #include <stdio.h>
 #include "strbuf.h"
-#include "csv-parser.h"
-
+#include "../csv-parser.h"
 
 int main() {
 
@@ -9,6 +8,15 @@ int main() {
   const char* small_str = "/new/path";
 
   strbuf path;
+  dsl_rdr myrdr;
+
+  dsl_parse(&myrdr, "s-f-i-i-b-s");
+  printf("DSL_STRING: ");
+  for(size_t i=0; i<myrdr.len; i++) {
+    printf("%d", myrdr.dsl_str[i]);
+    if(i == myrdr.len-1) { printf("\n"); }
+  }
+
   strbuf_init(&path);
 
   strbuf_append(&path, "home/");

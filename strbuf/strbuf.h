@@ -4,7 +4,7 @@
 #include <string.h>
 #include <stdlib.h>
 #include <stdbool.h>
-#include "types.h"
+#include "../types.h"
 
 #define MAX_SIZE 256
 
@@ -90,12 +90,6 @@ strview strbuf_slice(const strbuf *s, size_t start, size_t end) {
   }
 
   return (strview){ .data = s->data + start, .len = end };
-}
-
-
-// parse the buffer by a delimiter and return
-void strbuf_parse_delim(strbuf * buf, char delim) {
-
 }
 
 #endif
